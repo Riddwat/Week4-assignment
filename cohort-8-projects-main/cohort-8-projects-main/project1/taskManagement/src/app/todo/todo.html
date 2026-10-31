@@ -1,0 +1,83 @@
+<div class="todo">
+  <!-- first child -->
+  <div class="todo-head">
+    <div>
+      <h1>Advance Todo App</h1>
+      <div>Advance Fitness and Routine Management App with Data Persistence</div>
+    </div>
+  </div>
+  <!-- second child -->
+  <div class="task-parent-container">
+    <div class="text-area-wrapper">
+      <textarea placeholder="Add a new task" [(ngModel)]="taskName"></textarea>
+      <div class="inputs-wrapper">
+        <input type="date" [(ngModel)]="dueDate" />
+        <div class="input-2-container">
+          <input type="text" placeholder="Enter comma to seperatenthe tags" [(ngModel)]="tagsRaw" />
+          <button class="add-task-btn" (click)="addTodo()">Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- third child -->
+
+  <div class="taskList-table">
+    <table>
+      <thead>
+        <tr>
+          <th class="t-th">Index</th>
+          <th class="t-th">Task Name</th>
+          <th class="t-th">Due Date</th>
+          <th class="t-th">Tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (task of tasks(); track task) {
+          <tr>
+            <td>{{ task.id }}</td>
+            <td>{{ task.taskName }}</td>
+            <td>{{ task.dueDate }}</td>
+            <td>{{ task.tags }}</td>
+          </tr>
+        }
+
+@for (task of tasks(); track task.id) {
+    <tr>
+      <td>{{ task.id }}</td>
+
+      <td>
+        <div class="task-name-cell">
+          <span>{{ task.taskName }}</span>
+          <button
+            type="button"
+            class="delete-btn"
+            (click)="deleteTodo(task.id)">
+            Delete
+          </button>
+        </div>
+      </td>
+
+      <td>{{ task.dueDate }}</td>
+
+      <td>
+        @for (tag of task.tags; track tag) {
+          <span
+            [ngClass]="{
+              'health-tag': tag.trim().toLowerCase() === 'health'
+            }"
+            [ngStyle]="
+              tag.trim().toLowerCase() === 'fitness'
+                ? {'background-color': 'blue', 'color': 'white'}
+                : {}
+            ">
+            {{ tag | uppercase }}
+          </span>
+        }
+      </td>
+    </tr>
+  }
+
+      </tbody>
+    </table>
+  </div>
+</div>

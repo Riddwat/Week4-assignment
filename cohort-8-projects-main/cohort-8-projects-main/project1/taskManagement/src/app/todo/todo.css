@@ -1,0 +1,123 @@
+* {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
+.todo,
+.todo-head,
+.task-parent-container,
+.inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.todo {
+  margin-top: 50px;
+  align-items: flex-start;
+  width: 85%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  justify-content: center;
+}
+.todo-head {
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-head {
+  height: 150px;
+  width: 100%;
+  background-color: #0d6efd;
+  border-radius: 12px;
+}
+.todo-head div {
+  height: 100%;
+  width: 100%;
+}
+.todo-head h1,
+.todo-head div {
+  color: #fff;
+  text-align: center;
+}
+.task-parent-container {
+  margin-top: 5px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+.text-area-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  height: 100px;
+}
+
+textarea,
+input {
+  outline: none;
+  background-color: white;
+  border: 2px solid #6c757d;
+}
+
+textarea {
+  width: 69%;
+  height: 100%;
+  border-radius: 8px;
+}
+input[type='date'] {
+  width: 120px;
+}
+input::placeholder {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+input::-webkit-datetime-edit {
+  color: #6c757d;
+}
+
+.inputs-wrapper {
+  height: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.input-2-container {
+  display: flex;
+  flex-direction: row;
+}
+.input-2-container button {
+  margin-left: 10px;
+  background-color: #198754;
+  border-color: #198754;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 5px;
+}
+
+.health-tag {
+  background-color: yellow;
+  color: black;
+}
+
+.health-tag,
+.task-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 4px;
+}
